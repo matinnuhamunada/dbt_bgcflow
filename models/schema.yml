@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: genomes
+    description: This contains genome information
+
+    columns:
+      - name: genome_id
+        description: This is a unique identifier for a genome (Primary Key)
+        tests:
+          - unique
+          - not_null
+      - name: tax_id
+        description: This is a unique identifier for taxonomic placement (Foreign Key)
+        tests:
+          - not_null
+      - name: source
+        description: Data source, can be NCBI, Custom, or Patric
+      - name: strain
+        description: Strain name
+      - name: bgcs_count
+        description: Number of detected BGCs
+      - name: bgcs_on_contig_edge
+        description: Number of BGCs in contig edges
+  
+  - name: taxa
+    description: GTDB taxonomy
+    columns:
+      - name: tax_id
+        description: unique identifier for taxonomy
+        tests:
+          - unique
+          - not_null
+      - name: domain
+      - name: phylum
+      - name: class
+      - name: taxonomic_order
+      - name: family
+      - name: genus
+      - name: species

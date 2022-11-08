@@ -1,0 +1,8 @@
+dbt_bgcflow:
+
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'dbt_bgcflow.duckdb'
+      threads: 2
