@@ -40,7 +40,7 @@ seeds:
 models:
   dbt_bgcflow:
     # Config indicated by + and applies to all files under models/example/
-    +materialized: table
+    +materialized: view
     +docs:
       node_color: 'gold'
 
