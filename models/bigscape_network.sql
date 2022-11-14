@@ -1,5 +1,5 @@
 WITH src_bigscape_network AS (
-    SELECT * FROM {{ ref('2022-10-24 09_53_31_df_network_0.30') }}
+    SELECT * FROM {{ ref('bigscape_network_0.30') }}
 ),
 
 stg_bigscape_network AS (

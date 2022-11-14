@@ -1,5 +1,5 @@
 WITH src_taxa AS (
-    SELECT * FROM {{ ref('df_gtdb_meta') }}
+    SELECT * FROM {{ ref('gtdb_meta') }}
 ),
 
 stg_taxa AS (

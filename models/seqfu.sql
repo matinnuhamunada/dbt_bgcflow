@@ -1,5 +1,5 @@
 WITH src_seqfu AS (
-    SELECT * FROM {{ ref('df_seqfu_stats') }}
+    SELECT * FROM {{ ref('seqfu_stats') }}
 ),
 
 stg_seqfu AS(

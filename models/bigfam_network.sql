@@ -1,5 +1,5 @@
 WITH src_bigfam_network as (
-    SELECT * FROM {{ ref('query_network') }}
+    SELECT * FROM {{ ref('bigfam_query_network') }}
 ),
 
 stg_bigfam_network as (

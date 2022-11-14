@@ -1,9 +1,9 @@
 WITH src_taxa AS (
-    SELECT * FROM {{ ref('df_gtdb_meta') }}
+    SELECT * FROM {{ ref('gtdb_meta') }}
 ),
 
 src_genomes AS (
-    SELECT * FROM {{ ref('df_antismash_6.1.1_summary') }}
+    SELECT * FROM {{ ref('antismash_6.1.1_summary') }}
 ),
 
 stg_taxa AS (
