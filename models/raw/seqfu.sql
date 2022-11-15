@@ -1,5 +1,5 @@
 WITH src_seqfu AS (
-    SELECT * FROM {{ ref('seqfu_stats') }}
+    SELECT * FROM {{ source('bgcflow_tables', 'df_seqfu_stats') }}
 ),
 
 stg_seqfu AS(

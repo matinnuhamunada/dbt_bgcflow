@@ -1,5 +1,5 @@
 WITH src_bigscape_cluster AS (
-    SELECT * FROM {{ ref('bigscape_clusters_0.30') }}
+    SELECT * FROM {{ source('bgcflow_bigscape', 'df_clusters_0.30') }}
 ),
 
 stg_bigscape_cluster AS (

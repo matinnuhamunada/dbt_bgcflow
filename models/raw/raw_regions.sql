@@ -1,2 +1,2 @@
 SELECT *
-FROM {{ source('external_location', 'regions') }}
+FROM {{ source('bgcflow_warehouse', 'regions') }}
