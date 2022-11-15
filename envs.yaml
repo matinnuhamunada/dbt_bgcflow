@@ -8,4 +8,4 @@ dependencies:
   - sqlfluff~=1.2.1
   - pip
   - pip:
-    - git+https://github.com/dbeatty10/dbt-duckdb.git@dbeatty/bump-version-1.3.0a2#egg=dbt-duckdb
+    - git+https://github.com/jwills/dbt-duckdb.git

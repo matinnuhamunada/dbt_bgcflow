@@ -39,8 +39,9 @@ seeds:
 # using the `{{ config(...) }}` macro.
 models:
   dbt_bgcflow:
-    # Config indicated by + and applies to all files under models/example/
-    +materialized: view
+    raw:
+      # Config indicated by + and applies to all files under models/example/
+      +materialized: view
     +docs:
       node_color: 'gold'
 

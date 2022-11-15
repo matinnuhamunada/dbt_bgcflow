@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: external_location
+    schema: bgcflow_run
+    meta:
+      external_location: "/home/bgcflow_admin/data2/bgcflow/data/processed/test/data_warehouse/6.1.1/{name}.parquet"
+    tables:
+      - name: cdss
+      - name: dna_sequences
+      - name: regions
