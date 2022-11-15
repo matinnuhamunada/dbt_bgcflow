@@ -1,9 +1,9 @@
 WITH src_taxa AS (
-    SELECT * FROM {{ ref('gtdb_meta') }}
+    SELECT * FROM {{ source('bgcflow_tables', 'df_gtdb_meta') }}
 ),
 
 src_genomes AS (
-    SELECT * FROM {{ ref('antismash_6.1.1_summary') }}
+    SELECT * FROM {{ source('bgcflow_tables', 'df_antismash') }}
 ),
 
 stg_taxa AS (

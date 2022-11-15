@@ -1,5 +1,5 @@
 WITH src_checkm AS (
-    SELECT * FROM {{ ref('df_checkm_stats') }}
+    SELECT * FROM {{ source('bgcflow_tables', 'df_checkm_stats') }}
 ),
 
 stg_checkm AS (

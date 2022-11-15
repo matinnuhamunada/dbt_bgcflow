@@ -1,5 +1,5 @@
 WITH src_taxa AS (
-    SELECT * FROM {{ ref('gtdb_meta') }}
+    SELECT * FROM {{ source('bgcflow_tables', 'df_gtdb_meta') }}
 ),
 
 stg_taxa AS (
