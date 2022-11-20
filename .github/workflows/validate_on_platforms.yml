@@ -22,12 +22,13 @@ jobs:
             source venv/bin/activate
             venv/bin/python3 -m pip install --upgrade pip
             python3 -m pip install -r requirements.txt
-            source venv/bin/activate
         - name: Source configuration
           run: |
+            source venv/bin/activate
             python scripts/source_template.py templates/_sources.yml model/sources.yml "6.1.1" "0.30"
         - name: Build DuckDB
           run: |
+            source venv/bin/activate
             which dbt
             dbt --version
             dbt debug
