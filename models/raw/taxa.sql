@@ -1,5 +1,5 @@
 WITH src_taxa AS (
-    SELECT * FROM {{ source('bgcflow_tables', 'df_gtdb_meta') }}
+    SELECT * FROM read_csv_auto({{ source('bgcflow_tables', 'df_gtdb_meta') }}, header=True)
 ),
 
 stg_taxa AS (
