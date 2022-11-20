@@ -24,7 +24,7 @@ sources:
           external_location: "../data_warehouse/{{as_version}}/{name}.parquet"
         tags:
           - build-database
-  
+
   - name: bgcflow_tables
     schema: bgcflow_v0.5.1
     meta:
@@ -63,47 +63,42 @@ sources:
 
   - name: bgcflow_bigslice
     schema: bgcflow_v0.5.1
-    meta: 
+    meta:
       external_location: "templates/bigslice/query/{name}.csv"
     tables:
       - name: gcf_summary
-        meta: 
+        meta:
           external_location: "../bigslice/query_as_{{as_version}}/{name}.csv"
         tags:
           - bigslice
       - name: query_network
-        meta: 
+        meta:
           external_location: "../bigslice/query_as_{{as_version}}/{name}.csv"
         tags:
           - bigslice
 
   - name: bgcflow_bigscape
     schema: bgcflow_v0.5.1
-    meta: 
-      external_location: "templates/bigscape/*_{name}.csv"
+    meta:
+      external_location: "templates/bigscape/*{name}.csv"
     tables:
-      - name: df_clusters_{{bigscape_cutoff}}
-        meta: 
-          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}.csv"
+      - name: df_clusters
+        meta:
+          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}_{{bigscape_cutoff}}.csv"
         tags:
           - bigscape
-      - name: df_families_{{bigscape_cutoff}}
-        meta: 
-          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}.csv"
+      - name: df_families
+        meta:
+          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}_{{bigscape_cutoff}}.csv"
         tags:
           - bigscape
-      - name: df_family_presence_{{bigscape_cutoff}}
-        meta: 
-          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}.csv"
+      - name: df_known
+        meta:
+          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}_{{bigscape_cutoff}}.csv"
         tags:
           - bigscape
-      - name: df_known_{{bigscape_cutoff}}
-        meta: 
-          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}.csv" 
-        tags:
-          - bigscape
-      - name: df_network_{{bigscape_cutoff}}
-        meta: 
-          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}.csv" 
+      - name: df_network
+        meta:
+          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}_{{bigscape_cutoff}}.csv"
         tags:
           - bigscape

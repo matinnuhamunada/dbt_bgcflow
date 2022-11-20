@@ -16,5 +16,5 @@ stg_taxa AS (
     FROM src_taxa
 )
 
-SELECT DISTINCT tax_id, domain, phylum, class, taxonomic_order, family, genus, species 
+SELECT DISTINCT tax_id, domain, phylum, class, taxonomic_order, family, genus, species
     FROM stg_taxa

@@ -3,7 +3,7 @@ WITH src_bigfam_hits AS (
 ),
 
 stg_bigfam_gcf_hits AS (
-    SELECT 
+    SELECT
         gcf_id AS bigfam_id,
         core_member,
         putative_member,

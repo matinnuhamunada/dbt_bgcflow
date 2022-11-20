@@ -9,7 +9,7 @@ stg_checkm AS (
         Contamination AS contamination,
         "# ambiguous bases" AS num_ambiguous_bases,
         "Coding density" AS coding_density,
-        "# predicted genes" AS num_predicted_genes       
+        "# predicted genes" AS num_predicted_genes
     FROM src_checkm
 )
 

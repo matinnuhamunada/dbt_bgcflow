@@ -14,8 +14,8 @@ stg_taxa AS (
 ),
 
 stg_genomes AS(
-    SELECT 
-        src_genomes.genome_id, 
+    SELECT
+        src_genomes.genome_id,
         stg_taxa.tax_id,
         src_genomes.source,
         src_genomes.strain,
