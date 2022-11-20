@@ -1,7 +1,7 @@
 version: 2
 sources:
   - name: bgcflow_warehouse
-    description: Parquet files extracted from antiSMASH json. Change external location to "templates/data_warehouse/{name}.csv" if not found.
+    description: Parquet files extracted from antiSMASH json.
     schema: bgcflow_v0.5.1
     meta:
       external_location: "templates/data_warehouse/{name}.parquet"
@@ -9,19 +9,19 @@ sources:
       - name: cdss
         description: CDS extracted from antiSMASH json file
         meta:
-          external_location: "../data_warehouse/6.1.1/{name}.parquet"
+          external_location: "../data_warehouse/{{as_version}}/{name}.parquet"
         tags:
           - build-database
       - name: dna_sequences
         description: DNA sequences extracted from antiSMASH json file
         meta:
-          external_location: "../data_warehouse/6.1.1/{name}.parquet"
+          external_location: "../data_warehouse/{{as_version}}/{name}.parquet"
         tags:
           - build-database
       - name: regions
         description: Detected BGC regions extracted from antiSMASH json file
         meta:
-          external_location: "../data_warehouse/6.1.1/{name}.parquet"
+          external_location: "../data_warehouse/{{as_version}}/{name}.parquet"
         tags:
           - build-database
   
@@ -64,46 +64,46 @@ sources:
   - name: bgcflow_bigslice
     schema: bgcflow_v0.5.1
     meta: 
-      external_location: "templates/bigslice/query_as*/{name}.csv"
+      external_location: "templates/bigslice/query/{name}.csv"
     tables:
       - name: gcf_summary
         meta: 
-          external_location: "../bigslice/query_as*/{name}.csv"
+          external_location: "../bigslice/query_as_{{as_version}}/{name}.csv"
         tags:
           - bigslice
       - name: query_network
         meta: 
-          external_location: "../bigslice/query_as*/{name}.csv"
+          external_location: "../bigslice/query_as_{{as_version}}/{name}.csv"
         tags:
           - bigslice
 
   - name: bgcflow_bigscape
     schema: bgcflow_v0.5.1
     meta: 
-      external_location: "templates/bigscape/for_cytoscape_antismash_*/*_{name}.csv"
+      external_location: "templates/bigscape/*_{name}.csv"
     tables:
-      - name: df_clusters_0.30
+      - name: df_clusters_{{bigscape_cutoff}}
         meta: 
-          external_location: "../bigscape/for_cytoscape_antismash_*/*_{name}.csv"
+          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}.csv"
         tags:
           - bigscape
-      - name: df_families_0.30
+      - name: df_families_{{bigscape_cutoff}}
         meta: 
-          external_location: "../bigscape/for_cytoscape_antismash_*/*_{name}.csv"
+          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}.csv"
         tags:
           - bigscape
-      - name: df_family_presence_0.30
+      - name: df_family_presence_{{bigscape_cutoff}}
         meta: 
-          external_location: "../bigscape/for_cytoscape_antismash_*/*_{name}.csv"
+          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}.csv"
         tags:
           - bigscape
-      - name: df_known_0.30
+      - name: df_known_{{bigscape_cutoff}}
         meta: 
-          external_location: "../bigscape/for_cytoscape_antismash_*/*_{name}.csv" 
+          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}.csv" 
         tags:
           - bigscape
-      - name: df_network_0.30
+      - name: df_network_{{bigscape_cutoff}}
         meta: 
-          external_location: "../bigscape/for_cytoscape_antismash_*/*_{name}.csv" 
+          external_location: "../bigscape/for_cytoscape_antismash_{{as_version}}/*_{name}.csv" 
         tags:
           - bigscape
