@@ -6,18 +6,22 @@ on:
   pull_request:
     branches: [main]
 
-jobs:
-  build-linux:
-      name: Validate on linux
+  python-venv:
+      name: Validate on linux using python venv
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
-        - uses: conda-incubator/setup-miniconda@v2
+        - name: Set up Python
+          uses: actions/setup-python@v1
           with:
-            activate-environment: dbt-duckdb
-            environment-file: envs.yaml
-            python-version: 3.8
-            auto-activate-base: false
+            python-version: "3.8.x"
+        - name: Install venv
+          run: |
+            python3 -m venv venv
+            source venv/bin/activate
+            venv/bin/python3 -m pip install --upgrade pip
+            python3 -m pip install -r requirements.txt
+            source venv/bin/activate
         - name: Source configuration
           run: |
             python scripts/source_template.py templates/_sources.yml model/sources.yml "6.1.1" "0.30"
