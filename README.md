@@ -34,7 +34,7 @@ Activate the virtual environment and configures source location by running this 
 
 ```python
 project_dir="bgcflow/data/processed/<my_project>"
-python $project_dir/dbt_bgcflow/scripts/source_template.py templates/_sources.yml model/sources.yml "6.1.1" "0.30"
+python $project_dir/dbt_bgcflow/scripts/source_template.py templates/_sources.yml models/sources.yml "6.1.1" "0.30"
 ```
 
 #### Run DBT
