@@ -11,3 +11,4 @@ env/
 **/*.duckdb.wal
 seeds/
 *.ipynb_checkpoints/
+models/sources.yml
