@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [main]
 
+jobs:
   python-venv:
       name: Validate on linux using python venv
       runs-on: ubuntu-latest
