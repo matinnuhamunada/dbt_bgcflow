@@ -41,7 +41,8 @@ python $project_dir/dbt_bgcflow/scripts/source_template.py templates/_sources.ym
 ```bash
 dbt debug
 dbt build
-dbt serve
+dbt docs generate
+dbt docs serve
 ```
 
 # Credits

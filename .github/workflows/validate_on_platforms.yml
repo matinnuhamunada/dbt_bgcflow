@@ -29,6 +29,6 @@ jobs:
             which dbt
             dbt --version
             dbt debug
-            dbt build
-            dbt docs generate
+            #dbt build
+            #dbt docs generate
           shell: bash
